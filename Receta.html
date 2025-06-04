@@ -8,9 +8,26 @@
         h1, h4 { text-align: center; }
         p { text-align: justify; }
         img { display: block; margin: auto; border: 3px solid black; }
+
+        .trail {
+            position: absolute;
+            font-size: 20px;
+            color: gold;
+            pointer-events: none;
+            animation: fadeOut 1s linear forwards;
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(2); }
+        }
     </style>
 </head>
 <body>
+
+    <audio autoplay loop>
+        <source src="home.mp3" type="audio/mpeg">
+    </audio>
 
     <h1><b>RECETA DE ONIGIRI</b></h1>
     <h4><u><i>INGREDIENTES</i></u></h4>
@@ -26,13 +43,27 @@
 
     <h4>PREPARACIÓN</h4>
     
-    <p>Para preparar un delicioso onigiri, primero lava el arroz con agua en un colador 
-    hasta que el agua salga clara, lo que asegurará la textura adecuada. Luego, combina 
-    agua y arroz en un cazo y llévalo a hervir hasta el punto en que el agua esté a punto 
-    de derramarse; en ese momento, apaga el fuego. Si todavía queda agua, reduce el fuego 
-    al mínimo hasta que se evapore por completo...</p>
+   <p align=justify>Para preparar un delicioso onigiri, primero lava el arroz con agua en un colador hasta que el agua salga clara, lo que asegurará la textura adecuada. Luego, combina agua y arroz en un cazo y llévalo a hervir hasta el punto en que el agua esté a punto de derramarse; en ese momento, apaga el fuego. Si todavía queda agua, reduce el fuego al mínimo hasta que se evapore por completo. Una vez cocido, deja reposar el arroz durante 10 minutos sin retirar la tapa, para conservar la consistencia. Después, quita la tapa y deja enfriar entre 5 y 10 minutos adicionales. Coloca el arroz en un cuenco y cúbrelo con un trapo húmedo para evitar que se reseque. Mientras tanto, calienta agua con sal en un cazo hasta que la sal se disuelva completamente, y una vez fría, úsala para humedecer tus manos antes de manipular el arroz, lo que evitará que se pegue. Prepara los rellenos deseados y comienza a formar el onigiri colocando una cucharada generosa de arroz en la palma de tu mano. Agrega el relleno en el centro, cúbrelo con más arroz, y moldea cuidadosamente en una forma triangular con esquinas redondeadas, asegurándote de compactarlo bien. Por último, coloca una pequeña lámina de nori debajo para facilitar su manejo. ¡Y listo! Tu onigiri estará perfecto❤️🤩.</p>
     
     <img src="onigir.jpg" width="180" height="180">
+
+ YESHUA JIMENEZ QUINTERO
+
+    <script>
+        document.addEventListener("mousemove", function(event) {
+            let star = document.createElement("div");
+            star.className = "trail";
+            star.innerHTML = "★"; //
+            document.body.appendChild(star);
+            
+            star.style.left = event.pageX + "px";
+            star.style.top = event.pageY + "px";
+
+            setTimeout(() => {
+                star.remove();
+            }, 1000);
+        });
+    </script>
 
 </body>
 </html>
